@@ -1,2 +1,1 @@
-Sistema principal desarrollado para registrar y consultar información
-
+Sistema de gestión desarrollado para registrar y consultar información
