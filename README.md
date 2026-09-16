@@ -1,2 +1,2 @@
-Proyecto orientado a demostrar el uso de Git y GitHub para el control de versiones.
+Sistema de gestión desarrollado para registrar y consultar información
 
