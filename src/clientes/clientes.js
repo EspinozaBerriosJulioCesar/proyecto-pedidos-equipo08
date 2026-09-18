@@ -52,6 +52,7 @@ formCliente.addEventListener("submit", function(event) {
         <td>${fecha}</td>
         <td>
             <button type="button" class="btn-editar">Editar</button>
+            <button type="button" class="btn-eliminar">Eliminar</button>
         </td>
     `;
 
@@ -69,6 +70,15 @@ formCliente.addEventListener("submit", function(event) {
     });
 
     formCliente.reset();
+
+    fila.querySelector(".btn-eliminar").addEventListener("click", function() {
+        const confirmar = confirm("¿Está seguro de eliminar este cliente?");
+
+        if (confirmar) {
+            fila.remove();
+            alert("Cliente eliminado correctamente.");
+        }
+    });
 
     alert("Cliente registrado correctamente.");
 });
