@@ -7,6 +7,7 @@ formProducto.addEventListener("submit", function(event) {
     const nombre = document.getElementById("nombre").value.trim();
     const categoria = document.getElementById("categoria").value.trim();
     const precio = Number(document.getElementById("precio").value);
+    const fecha = new Date().toLocaleString("es-PE");
 
     if (nombre === "") {
         alert("Ingrese el nombre del producto.");
@@ -29,6 +30,7 @@ formProducto.addEventListener("submit", function(event) {
         <td>${nombre}</td>
         <td>${categoria}</td>
         <td>S/ ${precio.toFixed(2)}</td>
+        <td>${fecha}</td>
     `;
 
     listaProductos.appendChild(fila);
