@@ -49,6 +49,7 @@ formProducto.addEventListener("submit", function(event) {
         <td>${fecha}</td>
         <td>
             <button type="button" class="btn-editar">Editar</button>
+            <button type="button" class="btn-eliminar">Eliminar</button>
         </td>
     `;
 
@@ -61,6 +62,15 @@ formProducto.addEventListener("submit", function(event) {
         document.getElementById("precio").value = fila.cells[2].textContent.replace("S/ ", "");
 
         document.querySelector('#formProducto button[type="submit"]').textContent = "Actualizar Producto";
+    });
+
+        fila.querySelector(".btn-eliminar").addEventListener("click", function() {
+            const confirmar = confirm("¿Está seguro de eliminar este producto?");
+
+            if (confirmar) {
+                fila.remove();
+                alert("Producto eliminado correctamente.");
+            }
     });
 
 
