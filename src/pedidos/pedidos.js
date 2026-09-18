@@ -34,10 +34,21 @@ pedidoForm.addEventListener("submit", function(event) {
         <td>${producto}</td>
         <td>${cantidad}</td>
         <td>${fecha}</td>
+        <td>
+            <button type="button" class="btn-eliminar">Eliminar</button>
+        </td>
 
     `;
 
     listaPedidos.appendChild(fila);
+    
+    fila.querySelector(".btn-eliminar").addEventListener("click", function() {
+        const confirmar = confirm("¿Está seguro de eliminar este pedido?");
+
+        if (confirmar) {
+            fila.remove();
+        }
+    });
 
     pedidoForm.reset();
 
