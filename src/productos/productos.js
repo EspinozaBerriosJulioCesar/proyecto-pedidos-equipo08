@@ -1,5 +1,6 @@
 const formProducto = document.getElementById("formProducto");
 const listaProductos = document.getElementById("listaProductos");
+const buscarProducto = document.getElementById("buscarProducto");
 let filaEditando = null;
 
 formProducto.addEventListener("submit", function(event) {
@@ -77,4 +78,21 @@ formProducto.addEventListener("submit", function(event) {
     formProducto.reset();
 
     alert("Producto registrado correctamente.");
+});
+
+    buscarProducto.addEventListener("input", function() {
+        const texto = buscarProducto.value.toLowerCase();
+
+        const filas = listaProductos.querySelectorAll("tr");
+
+        filas.forEach(function(fila) {
+            const nombre = fila.cells[0].textContent.toLowerCase();
+            const categoria = fila.cells[1].textContent.toLowerCase();
+
+            if (nombre.includes(texto) || categoria.includes(texto)) {
+                fila.style.display = "";
+            } else {
+                fila.style.display = "none";
+            }
+        });
 });
