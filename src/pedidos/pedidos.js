@@ -4,9 +4,27 @@ const listaPedidos = document.getElementById("listaPedidos");
 pedidoForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const cliente = document.getElementById("cliente").value;
-    const producto = document.getElementById("producto").value;
-    const cantidad = document.getElementById("cantidad").value;
+    const cliente = document.getElementById("cliente").value.trim();
+    const producto = document.getElementById("producto").value.trim();
+    const cantidad = Number(document.getElementById("cantidad").value);
+
+    
+    if (cliente === "") {
+        alert("Ingrese el nombre del cliente.");
+        return;
+    }
+
+    
+    if (producto === "") {
+        alert("Ingrese el nombre del producto.");
+        return;
+    }
+
+    
+    if (!Number.isInteger(cantidad) || cantidad <= 0) {
+        alert("La cantidad debe ser un número entero mayor que 0.");
+        return;
+    }
 
     const fila = document.createElement("tr");
 
@@ -19,4 +37,6 @@ pedidoForm.addEventListener("submit", function(event) {
     listaPedidos.appendChild(fila);
 
     pedidoForm.reset();
+
+    alert("Pedido registrado correctamente.");
 });
