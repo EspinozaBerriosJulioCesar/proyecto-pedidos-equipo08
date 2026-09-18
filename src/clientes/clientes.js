@@ -7,6 +7,7 @@ formCliente.addEventListener("submit", function(event) {
     const nombre = document.getElementById("nombre").value.trim();
     const apellido = document.getElementById("apellido").value.trim();
     const correo = document.getElementById("correo").value.trim();
+    const fecha = new Date().toLocaleString("es-PE");
 
     if (nombre === "") {
         alert("Ingrese el nombre del cliente.");
@@ -29,6 +30,7 @@ formCliente.addEventListener("submit", function(event) {
         <td>${nombre}</td>
         <td>${apellido}</td>
         <td>${correo}</td>
+        <td>${fecha}</td>
     `;
 
     listaClientes.appendChild(fila);
