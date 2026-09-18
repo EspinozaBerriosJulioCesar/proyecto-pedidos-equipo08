@@ -7,6 +7,7 @@ pedidoForm.addEventListener("submit", function(event) {
     const cliente = document.getElementById("cliente").value.trim();
     const producto = document.getElementById("producto").value.trim();
     const cantidad = Number(document.getElementById("cantidad").value);
+    const fecha = new Date().toLocaleString("es-PE");
 
     
     if (cliente === "") {
@@ -32,6 +33,8 @@ pedidoForm.addEventListener("submit", function(event) {
         <td>${cliente}</td>
         <td>${producto}</td>
         <td>${cantidad}</td>
+        <td>${fecha}</td>
+
     `;
 
     listaPedidos.appendChild(fila);
