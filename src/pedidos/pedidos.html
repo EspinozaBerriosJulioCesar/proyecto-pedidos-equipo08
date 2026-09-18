@@ -21,10 +21,15 @@
             <label for="cantidad">Cantidad:</label>
             <input type="number" id="cantidad" min="1" required>
 
-            <button type="submit">Registrar Pedido</button>
+            <button type="submit" id="btnPedido">Registrar Pedido</button>
         </form>
 
         <h2>Pedidos registrados</h2>
+
+        <div class="busqueda">
+            <label for="buscarPedido">Buscar pedido:</label>
+            <input type="text" id="buscarPedido" placeholder="Buscar por cliente o producto">
+        </div>
 
         <table>
             <thead>
@@ -32,6 +37,9 @@
                     <th>Cliente</th>
                     <th>Producto</th>
                     <th>Cantidad</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody id="listaPedidos">
