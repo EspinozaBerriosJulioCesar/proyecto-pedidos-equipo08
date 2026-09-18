@@ -52,11 +52,18 @@ pedidoForm.addEventListener("submit", function(event) {
         <td>${cantidad}</td>
         <td>${fecha}</td>
         <td>
-            <button type="button" class="btn-editar">Editar</button>
-            <button type="button" class="btn-eliminar">Eliminar</button>
-        </td>
-
-    `;
+            <select class="estado-pedido">
+                <option value="Pendiente">Pendiente</option>
+                <option value="En proceso">En proceso</option>
+                <option value="Completado">Completado</option>
+                <option value="Cancelado">Cancelado</option>
+            </select>
+    </td>
+    <td>
+        <button type="button" class="btn-editar">Editar</button>
+        <button type="button" class="btn-eliminar">Eliminar</button>
+    </td>
+`;
 
     listaPedidos.appendChild(fila);
     
