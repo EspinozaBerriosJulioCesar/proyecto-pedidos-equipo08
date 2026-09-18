@@ -1,6 +1,6 @@
 const formCliente = document.getElementById("formCliente");
 const listaClientes = document.getElementById("listaClientes");
-
+const buscarCliente = document.getElementById("buscarCliente");
 let filaEditando = null;
 
 formCliente.addEventListener("submit", function(event) {
@@ -81,4 +81,26 @@ formCliente.addEventListener("submit", function(event) {
     });
 
     alert("Cliente registrado correctamente.");
+});
+
+buscarCliente.addEventListener("input", function() {
+    const texto = buscarCliente.value.toLowerCase();
+
+    const filas = listaClientes.querySelectorAll("tr");
+
+    filas.forEach(function(fila) {
+        const nombre = fila.cells[0].textContent.toLowerCase();
+        const apellido = fila.cells[1].textContent.toLowerCase();
+        const correo = fila.cells[2].textContent.toLowerCase();
+
+        if (
+            nombre.includes(texto) ||
+            apellido.includes(texto) ||
+            correo.includes(texto)
+        ) {
+            fila.style.display = "";
+        } else {
+            fila.style.display = "none";
+        }
+    });
 });
