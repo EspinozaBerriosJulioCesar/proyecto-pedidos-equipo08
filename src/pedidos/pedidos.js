@@ -1,6 +1,7 @@
 const pedidoForm = document.getElementById("pedidoForm");
 const listaPedidos = document.getElementById("listaPedidos");
 let filaEditando = null;
+const buscarPedido = document.getElementById("buscarPedido");
 
 pedidoForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -80,4 +81,20 @@ pedidoForm.addEventListener("submit", function(event) {
     pedidoForm.reset();
 
     alert("Pedido registrado correctamente.");
+});
+
+buscarPedido.addEventListener("input", function() {
+    const textoBusqueda = buscarPedido.value.toLowerCase().trim();
+    const filas = listaPedidos.querySelectorAll("tr");
+
+    filas.forEach(function(fila) {
+        const cliente = fila.cells[0].textContent.toLowerCase();
+        const producto = fila.cells[1].textContent.toLowerCase();
+
+        if (cliente.includes(textoBusqueda) || producto.includes(textoBusqueda)) {
+            fila.style.display = "";
+        } else {
+            fila.style.display = "none";
+        }
+    });
 });
