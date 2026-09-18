@@ -1,5 +1,6 @@
 const pedidoForm = document.getElementById("pedidoForm");
 const listaPedidos = document.getElementById("listaPedidos");
+let filaEditando = null;
 
 pedidoForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -27,6 +28,21 @@ pedidoForm.addEventListener("submit", function(event) {
         return;
     }
 
+    if (filaEditando) {
+        filaEditando.cells[0].textContent = cliente;
+        filaEditando.cells[1].textContent = producto;
+        filaEditando.cells[2].textContent = cantidad;
+
+        filaEditando = null;
+
+        pedidoForm.reset();
+
+        document.getElementById("btnPedido").textContent = "Registrar Pedido";
+
+        alert("Pedido actualizado correctamente.");
+        return;
+}
+
     const fila = document.createElement("tr");
 
     fila.innerHTML = `
@@ -35,12 +51,23 @@ pedidoForm.addEventListener("submit", function(event) {
         <td>${cantidad}</td>
         <td>${fecha}</td>
         <td>
+            <button type="button" class="btn-editar">Editar</button>
             <button type="button" class="btn-eliminar">Eliminar</button>
         </td>
 
     `;
 
     listaPedidos.appendChild(fila);
+    
+    fila.querySelector(".btn-editar").addEventListener("click", function() {
+        filaEditando = fila;
+
+    document.getElementById("cliente").value = fila.cells[0].textContent;
+    document.getElementById("producto").value = fila.cells[1].textContent;
+    document.getElementById("cantidad").value = fila.cells[2].textContent;
+
+    document.getElementById("btnPedido").textContent = "Actualizar Pedido";
+});
     
     fila.querySelector(".btn-eliminar").addEventListener("click", function() {
         const confirmar = confirm("¿Está seguro de eliminar este pedido?");
