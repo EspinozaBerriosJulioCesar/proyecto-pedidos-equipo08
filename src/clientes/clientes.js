@@ -4,9 +4,24 @@ const listaClientes = document.getElementById("listaClientes");
 formCliente.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    const nombre = document.getElementById("nombre").value;
-    const apellido = document.getElementById("apellido").value;
-    const correo = document.getElementById("correo").value;
+    const nombre = document.getElementById("nombre").value.trim();
+    const apellido = document.getElementById("apellido").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+
+    if (nombre === "") {
+        alert("Ingrese el nombre del cliente.");
+        return;
+    }
+
+    if (apellido === "") {
+        alert("Ingrese el apellido del cliente.");
+        return;
+    }
+
+    if (correo === "") {
+        alert("Ingrese el correo electrónico.");
+        return;
+    }
 
     const fila = document.createElement("tr");
 
@@ -19,4 +34,6 @@ formCliente.addEventListener("submit", function(event) {
     listaClientes.appendChild(fila);
 
     formCliente.reset();
+
+    alert("Cliente registrado correctamente.");
 });
