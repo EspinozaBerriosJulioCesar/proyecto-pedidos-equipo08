@@ -18,7 +18,6 @@ body {
     margin: 80px auto 0;
 }
 
-/* ENCABEZADO */
 
 .encabezado {
     background: #172554;
@@ -40,7 +39,6 @@ body {
     font-size: 15px;
 }
 
-/* MODULOS */
 
 .modulos {
     display: grid;
@@ -62,7 +60,6 @@ body {
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
 }
 
-/* ICONOS */
 
 .icono {
     font-size: 38px;
@@ -83,7 +80,6 @@ body {
     margin-bottom: 22px;
 }
 
-/* BOTONES */
 
 .boton {
     display: inline-block;
@@ -102,7 +98,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* RESPONSIVE */
 
 @media (max-width: 800px) {
 
