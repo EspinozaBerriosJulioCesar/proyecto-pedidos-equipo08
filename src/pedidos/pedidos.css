@@ -61,7 +61,6 @@ body {
     font-size: 14px;
 }
 
-/* FORMULARIO */
 
 #formPedido {
     display: grid;
@@ -103,7 +102,6 @@ body {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
-/* BOTÓN PRINCIPAL */
 
 .btn-principal {
     height: 44px;
@@ -124,7 +122,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* BUSCADOR */
 
 .buscador-pedidos {
     display: flex;
@@ -157,7 +154,6 @@ body {
     color: #94a3b8;
 }
 
-/* TABLA */
 
 .tabla-contenedor {
     width: 100%;
@@ -197,7 +193,6 @@ tbody tr:hover {
     background: #f8fafc;
 }
 
-/* ESTADO */
 
 .estado {
     display: inline-block;
@@ -227,7 +222,6 @@ tbody tr:hover {
     color: #dc2626;
 }
 
-/* BOTONES DE ACCIONES */
 
 .btn-editar,
 .btn-eliminar {
@@ -259,7 +253,6 @@ tbody tr:hover {
     background: #fecaca;
 }
 
-/* RESPONSIVE */
 
 @media (max-width: 1000px) {
 

@@ -4,7 +4,7 @@
 
 - Julio Cesar Espinoza Berrios - U23306078
 - Suico Tafur Jair Gino - U23320581
-- David Daniel Mantari Coa - U23312998
+
 
 ## Descripción
 
