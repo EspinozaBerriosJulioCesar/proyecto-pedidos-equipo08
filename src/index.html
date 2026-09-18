@@ -1,119 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Sistema de Gestión de Pedidos</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .contenedor {
-            width: 90%;
-            max-width: 900px;
-            text-align: center;
-        }
-
-        h1 {
-            margin-bottom: 10px;
-            color: #222;
-        }
-
-        .descripcion {
-            margin-bottom: 30px;
-            color: #666;
-        }
-
-        .modulos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .modulo {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .modulo h2 {
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .modulo p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .boton {
-            display: inline-block;
-            padding: 12px 20px;
-            background: #222;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
-
-        .boton:hover {
-            background: #444;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
     <div class="contenedor">
 
-        <h1>Sistema de Gestión de Pedidos</h1>
+        <header class="encabezado">
 
-        <p class="descripcion">
-            Seleccione el módulo que desea utilizar.
-        </p>
+            <h1>Sistema de Gestión de Pedidos</h1>
 
-        <div class="modulos">
+            <p>
+                Administra clientes, productos y pedidos desde un solo lugar.
+            </p>
+
+        </header>
+
+        <section class="modulos">
 
             <div class="modulo">
+
+                <div class="icono">👥</div>
+
                 <h2>Clientes</h2>
-                <p>Registrar y listar clientes.</p>
+
+                <p>
+                    Registra, consulta, edita y elimina clientes.
+                </p>
+
                 <a class="boton" href="clientes/clientes.html">
                     Gestionar Clientes
                 </a>
+
             </div>
 
+
             <div class="modulo">
+
+                <div class="icono">📦</div>
+
                 <h2>Productos</h2>
-                <p>Registrar y listar productos.</p>
+
+                <p>
+                    Administra el catálogo de productos registrados.
+                </p>
+
                 <a class="boton" href="productos/productos.html">
                     Gestionar Productos
                 </a>
+
             </div>
 
+
             <div class="modulo">
+
+                <div class="icono">🛒</div>
+
                 <h2>Pedidos</h2>
-                <p>Registrar y consultar pedidos.</p>
+
+                <p>
+                    Registra, consulta y controla los pedidos.
+                </p>
+
                 <a class="boton" href="pedidos/pedidos.html">
                     Gestionar Pedidos
                 </a>
+
             </div>
 
-        </div>
+        </section>
 
     </div>
 
 </body>
+
 </html>
