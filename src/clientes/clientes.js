@@ -9,7 +9,12 @@ formCliente.addEventListener("submit", function(event) {
     const nombre = document.getElementById("nombre").value.trim();
     const apellido = document.getElementById("apellido").value.trim();
     const correo = document.getElementById("correo").value.trim();
-    const fecha = new Date().toLocaleString("es-PE");
+    const ahora = new Date();
+    const fecha = ahora.toLocaleDateString("es-PE");
+    const hora = ahora.toLocaleTimeString("es-PE", {
+        hour: "2-digit",
+        minute: "2-digit"
+});
 
     if (nombre === "") {
         alert("Ingrese el nombre del cliente.");
@@ -50,6 +55,7 @@ formCliente.addEventListener("submit", function(event) {
         <td>${apellido}</td>
         <td>${correo}</td>
         <td>${fecha}</td>
+        <td>${hora}</td>
         <td>
             <button type="button" class="btn-editar">Editar</button>
             <button type="button" class="btn-eliminar">Eliminar</button>
