@@ -3,10 +3,8 @@
 ## Integrantes
 
 - Julio Cesar Espinoza Berrios - U23306078
-- Miguel Valentino Medina Pittar - U24220887
 - Suico Tafur Jair Gino - U23320581
-- David Daniel Mantari Coa - U23312998
-- Meyder Smit Zavaleta Pascual - U23246061
+
 
 ## Descripción
 
