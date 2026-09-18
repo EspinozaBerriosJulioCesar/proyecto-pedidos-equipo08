@@ -9,7 +9,12 @@ formProducto.addEventListener("submit", function(event) {
     const nombre = document.getElementById("nombre").value.trim();
     const categoria = document.getElementById("categoria").value.trim();
     const precio = Number(document.getElementById("precio").value);
-    const fecha = new Date().toLocaleString("es-PE");
+    const ahora = new Date();
+    const fecha = ahora.toLocaleDateString("es-PE");
+    const hora = ahora.toLocaleTimeString("es-PE", {
+        hour: "2-digit",
+        minute: "2-digit"
+    });
 
     if (nombre === "") {
         alert("Ingrese el nombre del producto.");
@@ -48,6 +53,7 @@ formProducto.addEventListener("submit", function(event) {
         <td>${categoria}</td>
         <td>S/ ${precio.toFixed(2)}</td>
         <td>${fecha}</td>
+        <td>${hora}</td>
         <td>
             <button type="button" class="btn-editar">Editar</button>
             <button type="button" class="btn-eliminar">Eliminar</button>
