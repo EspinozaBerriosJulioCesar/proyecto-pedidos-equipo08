@@ -1,6 +1,8 @@
 const formCliente = document.getElementById("formCliente");
 const listaClientes = document.getElementById("listaClientes");
 
+let filaEditando = null;
+
 formCliente.addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -24,6 +26,23 @@ formCliente.addEventListener("submit", function(event) {
         return;
     }
 
+    if (filaEditando) {
+
+        filaEditando.cells[0].textContent = nombre;
+        filaEditando.cells[1].textContent = apellido;
+        filaEditando.cells[2].textContent = correo;
+
+        filaEditando = null;
+
+        formCliente.reset();
+
+        document.getElementById("btnCliente").textContent = "Registrar Cliente";
+
+        alert("Cliente actualizado correctamente.");
+
+        return;
+    }
+
     const fila = document.createElement("tr");
 
     fila.innerHTML = `
@@ -31,9 +50,23 @@ formCliente.addEventListener("submit", function(event) {
         <td>${apellido}</td>
         <td>${correo}</td>
         <td>${fecha}</td>
+        <td>
+            <button type="button" class="btn-editar">Editar</button>
+        </td>
     `;
 
     listaClientes.appendChild(fila);
+
+    fila.querySelector(".btn-editar").addEventListener("click", function() {
+
+        filaEditando = fila;
+
+        document.getElementById("nombre").value = fila.cells[0].textContent;
+        document.getElementById("apellido").value = fila.cells[1].textContent;
+        document.getElementById("correo").value = fila.cells[2].textContent;
+
+        document.getElementById("btnCliente").textContent = "Actualizar Cliente";
+    });
 
     formCliente.reset();
 
