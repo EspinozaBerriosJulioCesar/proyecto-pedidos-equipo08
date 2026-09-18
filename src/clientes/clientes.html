@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="clientes.css">
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <header class="encabezado">
+            <div>
+                <h1>Gestión de Clientes</h1>
+                <p>Administra y consulta la información de tus clientes.</p>
+            </div>
+        </header>
+
+        <section class="seccion-formulario">
+
+            <h2>Registrar cliente</h2>
+
+            <form id="formCliente">
+
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Ingrese el nombre"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="apellido">Apellido</label>
+                    <input
+                        type="text"
+                        id="apellido"
+                        placeholder="Ingrese el apellido"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        placeholder="ejemplo@correo.com"
+                        required
+                    >
+                </div>
+
+                <button type="submit" id="btnCliente" class="btn-principal">
+                    + Registrar Cliente
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="seccion-lista">
+
+            <div class="titulo-lista">
+                <div>
+                    <h2>Lista de Clientes</h2>
+                    <p>Consulta, edita o elimina clientes registrados.</p>
+                </div>
+            </div>
+
+            <div class="buscador-clientes">
+                <span>🔎</span>
+                <input
+                    type="text"
+                    id="buscarCliente"
+                    placeholder="Buscar por nombre, apellido o correo..."
+                >
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaClientes">
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="clientes.js"></script>
+</body>
+</html>

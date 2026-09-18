@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <link rel="stylesheet" href="productos.css">
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <header class="encabezado">
+            <div>
+                <h1>Gestión de Productos</h1>
+                <p>Administra el catálogo y consulta los productos registrados.</p>
+            </div>
+        </header>
+
+        <section class="seccion-formulario">
+
+            <h2>Registrar producto</h2>
+
+            <form id="formProducto">
+
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Ingrese el producto"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoría</label>
+                    <input
+                        type="text"
+                        id="categoria"
+                        placeholder="Ej. Tecnología"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="precio">Precio</label>
+                    <input
+                        type="number"
+                        id="precio"
+                        placeholder="0.00"
+                        step="0.01"
+                        min="0"
+                        required
+                    >
+                </div>
+
+                <button type="submit" id="btnProducto" class="btn-principal">
+                    + Registrar Producto
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="seccion-lista">
+
+            <div class="titulo-lista">
+                <div>
+                    <h2>Lista de Productos</h2>
+                    <p>Consulta, edita o elimina productos registrados.</p>
+                </div>
+            </div>
+
+            <div class="buscador-productos">
+                <span>🔎</span>
+                <input
+                    type="text"
+                    id="buscarProducto"
+                    placeholder="Buscar por nombre o categoría..."
+                >
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaProductos">
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="productos.js"></script>
+</body>
+</html>
